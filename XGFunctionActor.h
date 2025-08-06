@@ -52,9 +52,17 @@ public:
 	UFUNCTION(BlueprintCallable)
 	int32 CallableGetLastCurrentMoney();
 
+public:
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	int32 BPOnlyMustOverride(float InMyFloat);
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	int32 BPAndCPPMustOverride(float InMyFloat);
+
 protected:
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	int32 Money = 10;
 	
 };
+
