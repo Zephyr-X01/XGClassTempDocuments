@@ -69,8 +69,17 @@ int32 AXGFunctionActor::PureGetLastCurrentMoney()
 
 int32 AXGFunctionActor::CallableGetLastCurrentMoney()
 {
+	BPOnlyMustOverride(0.5f);
+
 	Money -= 1;
 	return Money;
 }
+
+
+int32 AXGFunctionActor::BPAndCPPMustOverride_Implementation(float InMyFloat)
+{
+	return InMyFloat + 10;
+}
+
 
 
